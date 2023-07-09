@@ -1,0 +1,22 @@
+.intro {
+    margin: 0 40px;
+    padding: 0 40px;
+
+    .title-slogan {
+        text-align: center;
+        margin-bottom: 40px;
+
+        .slogan {
+            color: $background;
+            font-weight: $font-weight;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: $font-size;
+            color: #003556;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+    }
+}

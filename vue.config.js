@@ -1,3 +1,4 @@
+const { faL } = require("@fortawesome/free-solid-svg-icons");
 const { defineConfig } = require("@vue/cli-service");
 
 const path = require("path");
@@ -11,9 +12,9 @@ const port = process.env.VUE_APP_PORT;
 module.exports = defineConfig({
   publicPath: process.env.NODE_ENV === "production" ? "/" : "/",
   transpileDependencies: true,
-  lintOnSave: true,
+  lintOnSave: false,
   outputDir: "dist",
-  assetsDir: "static",
+  // assetsDir: "static",
   devServer: {
     port: port,
     open: {
@@ -26,6 +27,13 @@ module.exports = defineConfig({
       alias: {
         "@": path.resolve(__dirname, "src"),
         "#": path.resolve(__dirname, "public"),
+      },
+    },
+  },
+  css: {
+    loaderOptions: {
+      sass: {
+        additionalData: `@import "@/styles/_variables.scss";@import "@/styles/_customs.scss";`,
       },
     },
   },
